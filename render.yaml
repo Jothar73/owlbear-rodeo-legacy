@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: Owlbear Rodeo Legacy
+    name: Jothar Owlbear Rodeo
     runtime: static
     buildCommand: yarn build
     staticPublishPath: ./build
@@ -27,7 +27,7 @@ services:
         - key: REACT_APP_BROKER_URL
           fromService:
             type: web
-            name: "Owlbear Rodeo Backend"
+            name: "Jothar Owlbear Rodeo Backend"
             envVarKey: RENDER_EXTERNAL_URL
         - key: REACT_APP_MAINTENANCE
           value: false
@@ -37,7 +37,7 @@ services:
           value: "16.16.0"
   # A Docker web service
   - type: web
-    name: Owlbear Rodeo Backend
+    name: Jothar Owlbear Rodeo Backend
     runtime: docker
     region: oregon # optional (defaults to oregon) check other regions here: https://render.com/docs/regions
     plan: free
@@ -50,9 +50,9 @@ services:
       - key: ORIGIN_WHITELIST
         fromService:
           type: web
-          name: "Owlbear Rodeo Legacy"
+          name: "Jothar Owlbear Rodeo"
           envVarKey: RENDER_EXTERNAL_HOSTNAME
       - key: PORT
-        value: 9000
+        value: 10000
       - key: NODE_VERSION
         value: "16.16.0"
