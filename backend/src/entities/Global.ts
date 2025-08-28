@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 export default class Global {
   static ORIGIN_WHITELIST: string = process.env.ALLOW_ORIGIN!!;
 
-  static CONNECTION_PORT: string | number = process.env.PORT || 1000;
+  static CONNECTION_PORT: string | number = process.env.PORT || 10000;
 
   static ICE_SERVERS = fs
     .readFile(path.resolve(__dirname, "../../", "ice.json"), "utf8")
